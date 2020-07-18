@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define MOD 1000000007
-#define long long ll
+#define ll long long
 using namespace std;
 
 int main(){
@@ -13,12 +13,12 @@ int main(){
 	while(t--){
 		int n;
 		cin>>n;
-		int arr[n];
+		ll arr[n];
 		for(int i=0;i<n;i++){
 			cin>>arr[i];
 		}
-		int ans=0;
-		vector<int>v;
+		ll ans=0;
+		vector<ll>v;
 		for(int i=0;i<n;i++){
 			if(arr[i]!=(i+1)){
 				v.push_back(arr[i]);
@@ -26,13 +26,14 @@ int main(){
 			}
 			
 		}
-		int mini=INT_MAX,maxi=INT_MIN,sum=0;
+		ll mini=INT_MAX,maxi=INT_MIN;
+		ll sum=0;
 		for(int i=0;i<v.size();i++){
 			mini=min(mini,v[i]);
 			maxi=max(maxi,v[i]);
 			sum+=arr[v[i]-1];
 		}
-		int total=((maxi*(maxi+1))/2)-(((mini-1)*mini)/2);
+		ll total=((maxi*(maxi+1))/2)-(((mini-1)*mini)/2);
 		if(ans){
 			if(total==sum)
 			cout<<"1"<<endl;
@@ -44,4 +45,3 @@ int main(){
 		}
 	}
 }
-
