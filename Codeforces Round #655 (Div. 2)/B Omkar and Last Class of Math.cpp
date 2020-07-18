@@ -10,18 +10,19 @@ int main(){
 	//freopen("output.txt","r",stdout);
 	int t;
 	cin>>t;
-	bool flag=false;
 	while(t--){
 		int n;
 		cin>>n;
+		bool flag=false;
 		if(n%2==0){
 			cout<<n/2<<" "<<n/2<<endl;
 		}	
 		else{
 			for(int i=2;i*i<=n;i++){
 				if(n%i==0){
-					cout<<(n/i)<" "<<n-(n/i)<<endl;
+					cout<<(n/i)<<" "<<n-(n/i)<<endl;
 					flag=true;
+					break;
 				}
 			}
 			if(!flag)
@@ -30,4 +31,3 @@ int main(){
 		
 	}
 }
-
